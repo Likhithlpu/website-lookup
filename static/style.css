@@ -1,31 +1,87 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* styles.css */
+
+.header {
+    background-color: #333; /* Dark header background color */
+    color: #ffffff; /* Light header text color */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow to header */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px; /* Larger font size for header */
+    font-weight: bold; /* Bold font weight for emphasis */
+}
+
+.header p {
+    margin: 10px 0 0; /* Adjust margin for paragraph */
+    font-size: 16px; /* Smaller font size for additional information */
+    opacity: 0.8; /* Slightly reduce opacity for secondary text */
 }
 
 .container {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.box {
+    flex: 1;
+    background-color: #1e1e1e; /* Dark box background color */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Light shadow for dark boxes */
+    padding: 20px;
+    margin: 10px;
 }
 
-input[type="text"], button {
-    padding: 10px;
+.box-in {
+    width: calc(33.33% - 20px); /* Set width to one-third of the container width minus margin */
+    margin-right: 10px; /* Add margin between boxes */
+    display: inline-block; /* Display boxes in a row */
+    vertical-align: top; /* Align boxes at the top */
+}
+
+.box-int {
+    width: calc(50% - 20px); /* Set width to one-third of the container width minus margin */
+    margin-right: 10px; /* Add margin between boxes */
+    display: inline-block; /* Display boxes in a row */
+    vertical-align: top; /* Align boxes at the top */
+}
+
+.box-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff; /* Light text color */
     margin-bottom: 10px;
-    width: 100%;
 }
 
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.info-item {
+    margin-bottom: 10px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.info-item strong {
+    color: #ffffff; /* Light text color */
+}
+
+.info-item span {
+    color: #cccccc; /* Lighter text color for additional information */
 }
