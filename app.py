@@ -10,7 +10,7 @@ def whois_lookup(domain):
 
 def clean_data(data):
     cleaned_data = {}
-    cleaned_data['domain_name'] = data.get('domain_name', [])[1]
+    cleaned_data['domain_name'] = data.get('domain_name', [])
     cleaned_data['registrar'] = data.get('registrar', "N/A").replace("'", "").strip()
     cleaned_data['creation_date'] = parse_dates(data.get('creation_date', []))[1]
     cleaned_data['expiration_date'] = parse_dates(data.get('expiration_date', []))[1]

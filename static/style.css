@@ -85,3 +85,28 @@ body {
 .info-item span {
     color: #cccccc; /* Lighter text color for additional information */
 }
+
+.country-flag {
+    max-width: 100px; /* Adjust the maximum width of the flag as needed */
+    max-height: 100px; /* Adjust the maximum height of the flag as needed */
+    border: 1px solid #ccc; /* Optional: Add a border around the flag */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+}
+#country-name {
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optional: Add bold font weight */
+    color: white; /* Optional: Set the color of the text */
+    margin-bottom: 30px; /* Optional: Add margin to create space */
+    text-align: center;
+}
+
+.domain-logo {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+    display: block; /* Ensure the image is a block element */
+    margin-left: auto; /* Auto margin on left */
+    margin-right: auto; /* Auto margin on right */
+    padding: 50px;
+}

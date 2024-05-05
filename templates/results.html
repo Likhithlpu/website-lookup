@@ -12,7 +12,7 @@
     </div>
     <div class="container">
 
-        <img src="" alt="Domain Logo" id="domain-logo" class="domain-logo">
+        <img src="https://logo.clearbit.com/{{ results.domain_name }}?size=200&format=png" alt="Domain Logo" id="domain-logo" class="domain-logo">
         <div class="row">
             <div class="box">
                 <div class="box-title">Domain Name</div>
@@ -72,9 +72,9 @@
                 <div class="info-item"><span id="state">{{ results.state }}</span></div>
             </div>
             <div class="box">
-                <div class="box-title">Country</div>
+                <div class="box-title">Server Location Country</div>
                
-                <img src="" alt="Country Flag" id="country-flag" class="country-flag">
+                <img id="country-flag" class="country-flag" src="" alt="Country Flag">
                 <span id="country-name"></span>
             </div>
         </div>
@@ -82,28 +82,27 @@
 
     </div>
     <script>
-        // Function to fetch country name and flag
-    // Function to fetch country name and flag
-    function fetchCountryInfo(countryCode) {
-        fetch(`https://restcountries.com/v3/alpha/${countryCode}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch country info');
-                }
-                return response.json();
-            })
-            .then(data => {
-                const countryName = data[0].name.common;
-                const flagURL = data[0].flags.svg;
-                document.getElementById('country-name').textContent = countryName;
-                document.getElementById('country-flag').src = flagURL;
-            })
-            .catch(error => console.error('Error fetching country info:', error));
-    }
+        function fetchCountryInfo(countryCode) {
+            fetch(`https://restcountries.com/v3/alpha/${countryCode}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch country info');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const countryName = data[0].name.common;
+                    const flagURL = data[0].flags[0];
+                    console.log(flagURL)
+                    document.getElementById('country-name').textContent = countryName;
+                    document.getElementById('country-flag').src = flagURL;
+                })
+                .catch(error => console.error('Error fetching country info:', error));
+        }
 
-    // Call fetchCountryInfo function with the country code
-    const countryCode = '{{ results.country }}';
-    fetchCountryInfo(countryCode);
+        const countryCode = 'US'; // Set the country code manually for testing
+        fetchCountryInfo(countryCode);
+
     </script>
 
     <script src="../static/script.js"></script>
