@@ -8,6 +8,9 @@ def whois_lookup(domain):
     w = whois.whois(domain)
     return w
 
+
+
+
 def clean_data(data):
     cleaned_data = {}
     cleaned_data['domain_name'] = data.get('domain_name', [])
